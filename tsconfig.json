@@ -58,7 +58,6 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".storybook/*.ts",
     ".next/types/**/*.ts",
     "**/*.mts"
   ]
