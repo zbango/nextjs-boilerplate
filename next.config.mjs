@@ -16,7 +16,7 @@ const bundleAnalyzer = withBundleAnalyzer({
 });
 
 /** @type {import('next').NextConfig} */
-export default withSentryConfig(withSentryConfig(bundleAnalyzer(
+export default withSentryConfig(bundleAnalyzer(
   withNextIntlConfig({
     eslint: {
       dirs: ['.'],
@@ -24,9 +24,9 @@ export default withSentryConfig(withSentryConfig(bundleAnalyzer(
     poweredByHeader: false,
     reactStrictMode: true,
   }),
-)), {
-// For all available options, see:
-// https://github.com/getsentry/sentry-webpack-plugin#options
+), {
+  // For all available options, see:
+  // https://github.com/getsentry/sentry-webpack-plugin#options
 
   org: 'zbango',
   project: 'javascript-nextjs',
