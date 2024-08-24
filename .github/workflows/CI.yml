@@ -100,6 +100,11 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-      # Step to deploy to Vercel
-      - name: Deploy to Vercel
-        run: npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
+      # Conditional Deployment Step
+      - name: Deploy to Vercel (Preview or Production)
+        run: |
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            npx vercel --token ${{ secrets.VERCEL_TOKEN }} --confirm; # despliega a 'preview'
+          else
+            npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }} --confirm; # despliega a 'production'
+          fi
