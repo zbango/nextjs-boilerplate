@@ -1,9 +1,10 @@
-import '@/styles/global.css';
+import '@/styles/globals.scss';
 
 import type { Metadata } from 'next';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
+import BootstrapLoader from '@/components/BootstrapLoader';
 import { DemoBadge } from '@/components/DemoBadge';
 import { AppConfig } from '@/utils/AppConfig';
 
@@ -48,6 +49,7 @@ export default function RootLayout(props: {
   return (
     <html lang={props.params.locale}>
       <body>
+        <BootstrapLoader />
         <NextIntlClientProvider
           locale={props.params.locale}
           messages={messages}
