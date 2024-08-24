@@ -1,10 +1,8 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-import { Suspense } from 'react';
 
 import { AddGuestbookForm } from '@/components/AddGuestbookForm';
-import { GuestbookList } from '@/components/GuestbookList';
 
 export async function generateMetadata(props: { params: { locale: string } }) {
   const t = await getTranslations({
@@ -25,9 +23,9 @@ const Guestbook = () => {
     <>
       <AddGuestbookForm />
 
-      <Suspense fallback={<p>{t('loading_guestbook')}</p>}>
+      {/* <Suspense fallback={<p>{t('loading_guestbook')}</p>}>
         <GuestbookList />
-      </Suspense>
+      </Suspense> */}
 
       <div className="mt-2 text-center text-sm">
         {`${t('error_reporting_powered_by')} `}
