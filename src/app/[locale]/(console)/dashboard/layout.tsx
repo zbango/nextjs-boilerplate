@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
-import LocaleSwitcher from '@/components/LocaleSwitcher';
 import { LogOutButton } from '@/components/LogOutButton';
 import { BaseTemplate } from '@/templates/BaseTemplate';
 
@@ -10,37 +9,30 @@ export default function DashboardLayout(props: { children: React.ReactNode }) {
 
   return (
     <BaseTemplate
-      leftNav={(
+      navigation={(
         <>
-          <li>
+          <li className="nav-item">
             <Link
               href="/dashboard/"
-              className="border-none text-gray-700 hover:text-gray-900"
+              className="nav-link"
             >
               {t('dashboard_link')}
             </Link>
           </li>
-          <li>
+          <li className="nav-item">
             <Link
               href="/dashboard/user-profile/"
-              className="border-none text-gray-700 hover:text-gray-900"
+              className="nav-link"
             >
               {t('user_profile_link')}
             </Link>
           </li>
-        </>
-      )}
-      rightNav={(
-        <>
-          <li>
+          <li className="nav-item">
             <LogOutButton />
           </li>
-
-          <li>
-            <LocaleSwitcher />
-          </li>
         </>
       )}
+
     >
       {props.children}
     </BaseTemplate>

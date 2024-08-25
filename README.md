@@ -1,17 +1,19 @@
 # Boilerplate and Starter for Next.js 14+
 
 This repository is inspired in the work done by [CreativeDesignsGuru](https://creativedesignsguru.com) but customized for my personal purposes.
+- Bootstrap instead of Tailwind
+- No need for pg, drizzle, storybook, crowdin
 
 ### Requirements
 
-- Node.js 20+ and yarn
+- Node.js 20+ and npm
 
 ### Getting started
 
 Install dependencies.
 
 ```shell
-yarn install
+npm install
 ```
 
 You need to set your env.local file with the following variables
@@ -32,7 +34,7 @@ Also be sure to have these variables that would be needed to be set in Github Ac
 Then, you can run the project locally in development mode with live reload by executing:
 
 ```shell
-yarn run dev
+npm run dev
 ```
 
 Open http://localhost:3000 with your favorite browser to see your project.
@@ -47,39 +49,12 @@ Make a search in the whole project with `FIXME:` for making quick customization.
 - `next.config.mjs`: Next.js configuration
 - `.env`: default environment variables
 
-### Project structure
-
-```shell
-.
-├── README.md                       # README file
-├── .github                         # GitHub folder
-├── .husky                          # Husky configuration
-├── .vscode                         # VSCode configuration
-├── public                          # Public assets folder
-├── scripts                         # Scripts folder
-├── src
-│   ├── app                         # Next JS App (App Router)
-│   ├── components                  # React components
-│   ├── libs                        # 3rd party libraries configuration
-│   ├── locales                     # Locales folder (i18n messages)
-│   ├── models                      # Entity models
-│   ├── styles                      # Styles folder
-│   ├── templates                   # Templates folder
-│   ├── types                       # Type definitions
-│   ├── utils                       # Utilities folder
-│   └── validations                 # Validation schemas
-├── tests
-│   ├── e2e                         # E2E tests, also includes Monitoring as Code
-│   └── integration                 # Integration tests
-└── tsconfig.json                   # TypeScript configuration
-```
-
 ### Commit Message Format
 
 The project enforces [Conventional Commits](https://www.conventionalcommits.org/) specification. This means that all your commit messages must be formatted according to the specification. To help you write commit messages, the project uses [Commitizen](https://github.com/commitizen/cz-cli), an interactive CLI that guides you through the commit process. To use it, run the following command:
 
 ```shell
-yarn run commit
+npm run commit
 ```
 
 One of the benefits of using Conventional Commits is that it allows us to automatically generate a `CHANGELOG` file. It also allows us to automatically determine the next version number based on the types of commits that are included in a release.
@@ -89,7 +64,7 @@ One of the benefits of using Conventional Commits is that it allows us to automa
 All unit tests are located with the source code inside the same directory. So, it makes it easier to find them. The project uses Vitest and React Testing Library for unit testing. You can run the tests with:
 
 ```shell
-yarn run test
+npm run test
 ```
 
 ### Integration & E2E Testing
@@ -108,7 +83,7 @@ In the local environment, visual testing is disabled. The terminal will display 
 #### Bundle Analyzer
 
 ```shell
-yarn run build-stats
+npm run build-stats
 ```
 
 By running the command, it'll automatically open a new browser window with the results.
