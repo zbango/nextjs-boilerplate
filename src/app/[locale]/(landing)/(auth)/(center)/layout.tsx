@@ -9,7 +9,7 @@ export default function CenteredLayout(props: { children: React.ReactNode }) {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center">
+    <div className="container d-flex justify-content-center p-4">
       {props.children}
     </div>
   );

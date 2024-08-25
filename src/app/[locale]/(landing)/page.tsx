@@ -17,9 +17,11 @@ export default function Index(props: { params: { locale: string } }) {
 
   return (
 
-    <p className="text-base">
-      Hello World!
-    </p>
+    <div className="container-fluid">
+      <p>
+        Add your Home page content here
+      </p>
+    </div>
 
   );
 }

@@ -27,6 +27,8 @@ Sentry.init({
       blockAllMedia: true,
     }),
   ],
+  spotlight: process.env.NODE_ENV === 'development',
+
 });
 
 if (process.env.NODE_ENV === 'development') {
